@@ -7,7 +7,6 @@
     <li class="list-group-item"><a href="<?= getLink('index.php?linkpage=calendar') ?>"><i class="fa fa-calendar"></i> Đồ án đã đăng ký</a></li>
     <li class="list-group-item"><a href="<?= getLink('index.php?linkpage=nopdoan') ?>"><i class="fa fa-upload"></i> Nộp đồ án</a></li>
     <li class="list-group-item"><a href="<?= getLink('index.php?linkpage=kq') ?>" ><i class="fa fa-check"></i> Xem kết quả</a></li>
-    <li class="list-group-item"><a href="<?= getLink('index.php?linkpage=bxh') ?>"><i class="fa fa-trophy"></i> Bảng xếp hạng</a></li>
 </ul>
 <?php
 $user = new Model\User();

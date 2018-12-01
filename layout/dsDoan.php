@@ -222,7 +222,6 @@ $(function(){
 	                    $("#alertModal").modal('show');
 	                    $('#alertModal .modal-body').empty();
 	                    $('#alertModal .modal-body').append(html);
-	                    
 	                } 
 	            }
 	        );

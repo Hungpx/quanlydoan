@@ -25,6 +25,7 @@ class BaivietMapper extends ModelMapper{
             }
           $fieldArr = array_keys($data);
           $queryStr = 'INSERT INTO '.self::TABLE_NAME.' ('. implode(', ', $fieldArr).')'.' VALUES ('.implode(',', $valueUpdate).')';
+          
           $query = $this->connect->query($queryStr);
           if ($this->connect->affected_rows == 1){
               $model->exchangeArray($data);

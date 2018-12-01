@@ -194,6 +194,7 @@ function addDiemHD($postData,$connect){
     if (empty($postData['maSV']) || empty($postData['maDoan']) || empty($postData['diem'])){
         return ['code' => 0, 'messages' => 'Dữ liệu không hợp lệ'];
     }
+    $userService = ! empty($_SESSION['userService']) ? $_SESSION['userService'] : [];
     $diem = (float)$postData['diem'];
     if (!$diem){
         return ['code' => 0, 'messages' => 'Bạn chưa điền điểm'];
@@ -208,6 +209,8 @@ function addDiemHD($postData,$connect){
     $huongdan->exchangeArray($postData);
     $huongdan->setDiem($diem);
     $huongdan->setTrangthaiSua(Model\Huongdan::EDIT_STATUS_NOT_ALLOW);
+    $huongdan->setUpdateById($userService['id']);
+    $huongdan->setUpdateDateTime(getCurrentDateTime());
     $huongdanMapper->save($huongdan);
     return ['code' => 1, 'messages' => 'Chấm điểm thành công'];
 }

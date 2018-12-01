@@ -26,7 +26,7 @@ if (! $baivietMapper->get($baiviet)){
 				<div class="col-xs-12 row">
 					<div class="new-content"><h2><?= $baiviet->getTieude(); ?></h2></div>
 					<div class="new-content-wrapper">
-						<?= $baiviet->getChitiet(); ?>
+						<?= nl2br($baiviet->getChitiet()); ?>
 					</div>
 				</div>
               </div>
@@ -43,6 +43,10 @@ if (! $baivietMapper->get($baiviet)){
     position: absolute;
     right: -25px;
     top: 11px;
+}
+#new-area .new-content-wrapper {
+    width: 100%;
+    line-height: 20px;
 }
 .error{
 	border: 1px solid red;

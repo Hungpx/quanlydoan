@@ -12,6 +12,8 @@ if (!class_exists('Huongdan')) {
         protected $trangthai;
         protected $trangthaiSua;
         protected $id;
+        protected $updateById;
+        protected $updateDateTime;
         
         const STATUS_NEW = 1; //Mới
         const STATUS_DELETE = 2; //Không cho bảo vệ
@@ -22,6 +24,38 @@ if (!class_exists('Huongdan')) {
         const EDIT_STATUS_NOT_ALLOW  =2; //không cho sửa
         const EDIT_STATUS_ALLOW  =3; //Cho phép sửa
         
+        /**
+         * @return the $updateById
+         */
+        public function getUpdateById()
+        {
+            return $this->updateById;
+        }
+    
+        /**
+         * @return the $updateDateTime
+         */
+        public function getUpdateDateTime()
+        {
+            return $this->updateDateTime;
+        }
+    
+        /**
+         * @param field_type $updateById
+         */
+        public function setUpdateById($updateById)
+        {
+            $this->updateById = $updateById;
+        }
+    
+        /**
+         * @param field_type $updateDateTime
+         */
+        public function setUpdateDateTime($updateDateTime)
+        {
+            $this->updateDateTime = $updateDateTime;
+        }
+    
         /**
          * @return the $id
          */

@@ -134,6 +134,15 @@ if ($linkpage){
         case 'cdpb':
             include_once 'layout/chamdiempb.php';
             break;
+        case 'bcdiem':
+            include_once 'layout/baocaodiem.php';
+            break;
+        case 'bcgv':
+            include_once 'layout/baocaogv.php';
+            break;
+        case 'bclop':
+            include_once 'layout/baocaolop.php';
+            break;
         case 'page404':
             include_once 'layout/404.php';
             break;

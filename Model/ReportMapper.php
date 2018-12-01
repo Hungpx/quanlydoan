@@ -68,6 +68,19 @@ if (!class_exists('ReportMapper')) {
            if ($row = $query->fetch_assoc()){
                $result['totalBaiviet'] = $row['totalBaiviet'];
            }
+           
+           //Tổng số sv đạt
+           $queryStr = 'SELECT COUNT(maSV) as totalSV FROM phanbien WHERE trangthai = 2';
+           $query = $this->connect->query($queryStr);
+           if ($row = $query->fetch_assoc()){
+               $result['totalSVDat'] = $row['totalSV'];
+           }
+           //Tổng số sv không đạt
+           $queryStr = 'SELECT COUNT(maSV) as totalSV FROM phanbien WHERE trangthai = 3';
+           $query = $this->connect->query($queryStr);
+           if ($row = $query->fetch_assoc()){
+               $result['totalSVKhongDat'] = $row['totalSV'];
+           }
            return $result;
        }
        //Báo cáo đồ án theo chủ đề

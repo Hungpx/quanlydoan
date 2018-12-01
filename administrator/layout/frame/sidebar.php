@@ -36,10 +36,11 @@ $userService = $_SESSION['userService'];
     <li> <a href="<?= getLink('administrator/index.php?linkpage=menu') ?>"><i class="icon icon-th-list"></i> <span>Quản lý Menu</span></a></li>
    	<li> <a href="<?= getLink('administrator/index.php?linkpage=baiviet') ?>"><i class="icon icon-th-list"></i> <span>Quản lý bài viết</span></a></li>
     
-    <li class="submenu"> <a href="<?= getLink('administrator/baocao.php') ?>"><i class="icon icon-signal"></i> <span>Thống kê - Báo cáo</span></a>
+    <li class="submenu"> <a href="<?= getLink('administrator/index.php?linkpage=bcdiem') ?>"><i class="icon icon-signal"></i> <span>Thống kê - Báo cáo</span></a>
       <ul>
-        <li><a href="<?= getLink('administrator/bcdiem.php') ?>">Tổng kết điểm sinh viên</a></li>
-        <li><a href="gallery.html">Báo cáo chủ đề</a></li>
+        <li><a href="<?= getLink('administrator/index.php?linkpage=bcdiem') ?>">Báo cáo điểm sinh viên</a></li>
+        <li><a href="<?= getLink('administrator/index.php?linkpage=bcgv') ?>">Báo cáo đồ án theo giảng viên</a></li>
+        <li><a href="<?= getLink('administrator/index.php?linkpage=bclop') ?>">Báo cáo sinh viên theo lớp</a></li>
       </ul>
     </li>
   </ul>
@@ -57,10 +58,11 @@ $userService = $_SESSION['userService'];
         <li><a href="<?= getLink('administrator/index.php?linkpage=cdpb') ?>">Chấm điểm phản biện</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="<?= getLink('administrator/baocao.php') ?>"><i class="icon icon-signal"></i> <span>Thống kê - Báo cáo</span></a>
+    <li class="submenu"> <a href="<?= getLink('administrator/index.php?linkpage=bcdiem') ?>"><i class="icon icon-signal"></i> <span>Thống kê - Báo cáo</span></a>
       <ul>
-        <li><a href="<?= getLink('administrator/baocao.php') ?>">Báo cáo điểm sinh viên</a></li>
-        <li><a href="gallery.html">Báo cáo sinh viên</a></li>
+        <li><a href="<?= getLink('administrator/index.php?linkpage=bcdiem') ?>">Báo cáo điểm sinh viên</a></li>
+        <li><a href="<?= getLink('administrator/index.php?linkpage=bcgv') ?>">Báo cáo đồ án theo giảng viên</a></li>
+         <li><a href="<?= getLink('administrator/index.php?linkpage=bclop') ?>">Báo cáo sinh viên theo lớp</a></li>
       </ul>
     </li>
   </ul>

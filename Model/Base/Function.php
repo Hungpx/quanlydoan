@@ -129,10 +129,22 @@ function toDisplayDate($d)
     }
     return '';
 }
+function toDisplayDateTime($d)
+{
+    if($d){
+        $date = DateTime::createFromFormat('Y-m-d H:i:s', $d);
+        if($date){
+            return $date->format('d/m/Y H:i:s');
+        }
+
+    }
+    return '';
+}
 function getCurrentDate(){
       return date('Y-m-d');
 }
 
-function download($fileName){
-    
+function getCurrentDateTime()
+{
+    return date('Y-m-d H:i:s');
 }

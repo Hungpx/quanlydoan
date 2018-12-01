@@ -15,7 +15,7 @@
 			 <img src="<?= getViewPath('images/slider/anh2.jpg') ?>" alt="Chicago">
 		  </div>
 		  <div class="item">
-			 <img src="<?= getViewPath('images/slider/anh1.jpg') ?>" alt="New York">
+			 <img src="<?= getViewPath('images/slider/anh3.jpg') ?>" alt="New York">
 		  </div>
 	   </div>
 	   <!-- Left and right controls -->

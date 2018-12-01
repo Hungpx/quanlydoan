@@ -20,6 +20,8 @@ class HuongdanMapper extends ModelMapper{
             'diem'          => $model->getDiem() ? : null,
             'trangthai'     => $model->getTrangthai() ? : null,
             'trangthaiSua'  => $model->getTrangthaiSua() ? : null,
+            'updateById'    => $model->getUpdateById() ? : null,
+            'updateDateTime'=> $model->getUpdateDateTime() ? : null,
         ];
         
         if (! $model->getId()){
@@ -98,7 +100,7 @@ class HuongdanMapper extends ModelMapper{
         if ($model->getOption('trangthais')){
             $whereArr[] = 'hd.trangthai  IN ('.implode(', ', $model->getOption('trangthais')).')';
         }
-        $queryStr = 'select hd.maDoan, hd.maSV, hd.maGV, hd.diem, hd.trangthai, hd.nhanxet, hd.trangthaiSua, svtg.fileName
+        $queryStr = 'select hd.maDoan, hd.maSV, hd.maGV, hd.diem, hd.trangthai, hd.nhanxet, hd.trangthaiSua, hd.updateById, hd.updateDateTime, svtg.fileName
                 FROM '.self::TABLE_NAME.' as hd
                 INNER JOIN sinhvien_thamgia as svtg
                 ON hd.maDoan = svtg.maDoan AND hd.maSV = svtg.maSV';
@@ -141,7 +143,13 @@ class HuongdanMapper extends ModelMapper{
             $huongdan->addOption('fileName', $row['fileName']);
             $sinhvienIds[$huongdan->getMaSV()] = $huongdan->getMaSV();
             $doanIds[$huongdan->getMaDoan()] = $huongdan->getMaDoan();
-            $giangvienIds[$huongdan->getMaGV()] = $huongdan->getMaGV();
+            if ($huongdan->getMaGV()){
+                $giangvienIds[$huongdan->getMaGV()] = $huongdan->getMaGV();
+            }
+            if ($huongdan->getUpdateById()){
+                $giangvienIds[$huongdan->getUpdateById()] = $huongdan->getUpdateById();
+            }
+            
             $result[] = $huongdan;
         }
         $sinhviens = [];
@@ -198,6 +206,9 @@ class HuongdanMapper extends ModelMapper{
                 }
                 if (!empty($giangviens[$huongdan->getMaGV()])){
                     $huongdan->addOption('tenGV', $giangviens[$huongdan->getMaGV()]);
+                }
+                if (!empty($giangviens[$huongdan->getUpdateById()])){
+                    $huongdan->addOption('updateName', $giangviens[$huongdan->getUpdateById()]);
                 }
             }
         }

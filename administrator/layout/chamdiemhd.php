@@ -126,7 +126,7 @@ $lstGiangvien = $giangvienMapper->fetchAll($giangvien);
                   <th>Lớp</th>
                   <th>Tên Đề tài</th>
                   <th>Loại đồ án</th>
-                  <th>Giảng viên</th>
+                  <th>Giảng viên hướng dẫn</th>
                   <th>File Nộp</th>
                   <th style="width:30px;">Điểm HD</th>
                   <th>Nhận xét</th>
@@ -135,6 +135,7 @@ $lstGiangvien = $giangvienMapper->fetchAll($giangvien);
                   <th>Trạng thái sửa</th>
                   <th>Hội đồng bảo vệ</th>
                    <?php }?>
+                   <th>Cập nhật cuối</th>
                 </tr>
               </thead>
               <tbody>
@@ -222,6 +223,14 @@ $lstGiangvien = $giangvienMapper->fetchAll($giangvien);
  				  	?>
  				  </td>
  				   <?php }?>
+ 				   <td style="min-width: 122px;">
+ 				   <?php 
+ 				   if ($huongdan->getUpdateById()){
+ 				       echo '<span ><i class="icon-user"></i> '.$huongdan->getOption('updateName').' ('.toDisplayDateTime($huongdan->getUpdateDateTime()).')</span>';
+ 				   }
+ 				   ?>
+ 				   </td>
+ 				   
                 </tr>
                <?php }} ?>
               </tbody>

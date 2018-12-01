@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if ($isValid){
         $baiviet->exchangeArray($dataPost);
+       $baiviet->setChitiet($dataPost['chitiet']);
         if (!empty($fileUpload["name"])){
             $targetFolder = getSavePath('baiviet');
             if (!file_exists($targetFolder)) {
